@@ -15,8 +15,22 @@ public class Exercise1 {
 	}
 
 	public String convertirBaseGabriel(int a) {
+		String text= "" + a;
+		int digito, num= 0,k;
+		boolean hayDos= false;
+		for (int i=0; i< text.length(); i++){
+		    digito= Integer.parseInt(text.substring(i, i+1));
+		    k= text.length() -1 - i;
+		    num+= digito*(Math.pow(2, k+1)-1);
 
-		// TO DO
-		return "El numero proporcionado no esta en base Gabriel.";
+		    //Verificador de los digitos
+		    if (digito> 2 || (hayDos== true && digito> 0))
+			return "El numero proporcionado no esta en base Gabriel.";
+
+		    //Verifica que el dos solo este en el digito menos significativo
+		    if(digito==2)
+			hayDos=true;
+		}
+			return num + "";
 	}
 }
