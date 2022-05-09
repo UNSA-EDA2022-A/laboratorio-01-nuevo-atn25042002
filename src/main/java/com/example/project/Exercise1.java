@@ -31,6 +31,6 @@ public class Exercise1 {
 		    if(digito==2)
 			hayDos=true;
 		}
-			return num + "";
+		return num + "";
 	}
 }
