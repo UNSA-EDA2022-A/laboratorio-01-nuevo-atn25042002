@@ -21,8 +21,22 @@ public class Exercise2 {
 	}
 
 	public Integer getMenorNumeroSaltos(int a []) {
+		
+		Integer nsaltos= 0, pos= 0, dist;
+		for(int i= 0; i< a.length; i++){
+		    dist= a[i] - a[pos];
 
-		// TO DO
-		return -1;
+		    //Verifica si la distancia es mayor a 50
+		    if(dist> 50 ) {
+			if(i== pos+1) //En caso el siguiente esta a mas de 50
+			    return - 1;
+			//Coloca la nueva posicion y aumenta el numero de saltos
+			pos= i-1;
+			i--;
+			nsaltos++;
+		    }            
+		}
+		//Aumento el salto final
+		return nsaltos + 1;
 	}
 }
